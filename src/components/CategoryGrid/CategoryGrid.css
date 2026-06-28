@@ -1,0 +1,144 @@
+.catalog-wrapper {
+  max-width: 1400px;
+  margin: 70px auto 0;
+  padding-inline: 24px;
+}
+
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.catalog-heading {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+}
+
+.catalog-view-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.45px;
+  transition: opacity 0.2s ease;
+}
+
+.catalog-view-link:hover {
+  opacity: 0.65;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.catalog-card {
+  display: block;
+  text-decoration: none;
+}
+
+.catalog-card-inner {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+}
+
+.catalog-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.55s ease;
+}
+
+.catalog-card:hover img {
+  transform: scale(1.05);
+}
+
+.catalog-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.05) 55%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.catalog-card:hover .catalog-shade {
+  opacity: 0.88;
+}
+
+.catalog-info {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 22px;
+  color: white;
+}
+
+.catalog-info h3 {
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.catalog-info p {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 12px;
+}
+
+.catalog-btn {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+}
+
+.catalog-card:hover .catalog-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .catalog-wrapper {
+    padding-inline: 12px;
+  }
+
+  .catalog-info h3 {
+    font-size: 14px;
+  }
+}

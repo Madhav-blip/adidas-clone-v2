@@ -1,0 +1,144 @@
+.offer-wrapper {
+  width: 100%;
+}
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 18px 24px;
+  background: #000;
+  color: white;
+}
+
+.stat-box {
+  min-width: 180px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.stat-box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 36px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+}
+
+.stat-box strong {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.stat-box span {
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+
+.promo-grid {
+  max-width: 1400px;
+  margin: 48px auto 0;
+  padding-inline: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.promo-card {
+  flex: 1;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.promo-card:hover img {
+  transform: scale(1.05);
+}
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.65) 0%,
+      transparent 56%
+    );
+}
+
+.promo-copy {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  color: white;
+}
+
+.promo-copy p {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: rgba(255,255,255,0.76);
+}
+
+.promo-copy h3 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+  font-size: 26px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.promo-copy a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 24px;
+  background: white;
+  color: black;
+  border: 2px solid white;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all .2s ease;
+}
+
+.promo-copy a:hover {
+  background: transparent;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .promo-grid {
+    flex-direction: column;
+    padding-inline: 16px;
+  }
+
+  .promo-card {
+    height: 300px;
+  }
+
+  .stat-box::after {
+    display: none;
+  }
+}

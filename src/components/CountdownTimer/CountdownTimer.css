@@ -1,0 +1,102 @@
+.promo-banner {
+  margin-top: 68px;
+  padding: 42px 24px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.promo-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.promo-title {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+  font-style: normal;
+}
+
+.promo-title em {
+  color: #e00000;
+  font-style: normal;
+}
+
+.promo-clock {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.clock-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 78px;
+}
+
+.clock-value {
+  min-width: 82px;
+  padding: 14px 16px;
+  background: #141414;
+  border: 1px solid #2f2f2f;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.clock-text {
+  margin-top: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.52);
+}
+
+.promo-button {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 2px solid white;
+  background: white;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+
+.promo-button:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .promo-title {
+    font-size: 22px;
+  }
+
+  .clock-value {
+    min-width: 60px;
+    padding: 10px 12px;
+    font-size: 28px;
+  }
+
+  .promo-clock {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,185 @@
+.item-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.media-box {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.media-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease, opacity .35s ease;
+}
+
+.back-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.item-card:hover .front-image {
+  opacity: 0;
+}
+
+.item-card:hover .back-image {
+  opacity: 1;
+}
+
+.item-card:hover img {
+  transform: scale(1.05);
+}
+
+.tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  background: black;
+}
+
+.sale-tag {
+  background: #e00000;
+}
+
+.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  opacity: 0;
+}
+
+.item-card:hover .wishlist {
+  opacity: 1;
+}
+
+.fav-icon {
+  font-size: 16px;
+}
+
+.fav-icon.active {
+  color: #e00000;
+}
+
+.bag-btn {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  padding: 11px;
+  border: none;
+  background: rgba(0,0,0,.85);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: .25s ease;
+}
+
+.item-card:hover .bag-btn {
+  transform: translateY(0);
+}
+
+.details {
+  padding: 12px 0 4px;
+}
+
+.details h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.category-text {
+  font-size: 13px;
+  color: #767677;
+  margin-bottom: 8px;
+}
+
+.swatch-row {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.shade-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.14);
+}
+
+.shade-dot.light {
+  border-color: #ccc;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.star-row {
+  display: flex;
+  gap: 2px;
+}
+
+.filled {
+  color: black;
+  font-size: 11px;
+}
+
+.empty {
+  color: #ccc;
+  font-size: 11px;
+}
+
+.rating-row small {
+  font-size: 12px;
+  color: #767677;
+}
+
+.price-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.current-price {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.old-price {
+  font-size: 13px;
+  color: #767677;
+  text-decoration: line-through;
+}
+
+.discount-text {
+  color: #e00000;
+  font-size: 12px;
+  font-weight: 700;
+}

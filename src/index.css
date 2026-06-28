@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey-light: #f5f5f5;
+  --grey-mid: #e0e0e0;
+  --grey-dark: #767677;
+  --red: #e00;
+  --font-main: arial ;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 1px solid var(--black);
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
