@@ -133,7 +133,8 @@
 }
 
 .cart-btn {
-  position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
 .cart-btn span {

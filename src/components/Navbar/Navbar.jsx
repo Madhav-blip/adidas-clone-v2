@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import adidasLogo from '../../assets/adidas-logo.png';
+import { useCart } from '../../hooks/useCart';
 
 const menuData = [
   { title: 'New & Trending', url: '/home' },
@@ -61,6 +62,8 @@ export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
   const [keyword, setKeyword] = useState('');
   const navigate = useNavigate();
+  const { cart } = useCart();
+
 
   const submitSearch = (e) => {
     e.preventDefault();
@@ -106,11 +109,10 @@ export default function Navbar() {
 
           <button>👤</button>
           <button>♡</button>
-          <button className="cart-btn">
-            👜
-            <span>0</span>
-          </button>
-
+          <Link to="/cart" className="cart-btn">
+  👜
+  <span>{cart.length}</span>
+</Link>
           <button
             className="menu-toggle"
             onClick={() => setDrawer(!drawer)}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
+import { useCart } from '../../hooks/useCart';
 
 function Rating({ value }) {
   const filled = Math.floor(value);
@@ -21,10 +22,36 @@ function Rating({ value }) {
 
 export default function ProductCard({ product }) {
   const [saved, setSaved] = useState(false);
+  const { cart, setCart } = useCart();
 
   const originalPrice = Math.round(
     product.price / (1 - product.discountPercentage / 100)
   );
+  function addProductToCart(e) {
+  e.preventDefault();
+
+  const existingProduct = cart.find(
+    (item) => item.id === product.id
+  );
+
+  if (existingProduct) {
+    const updatedCart = cart.map((item) =>
+      item.id === product.id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    );
+
+    setCart(updatedCart);
+  } else {
+    setCart([
+      ...cart,
+      {
+        ...product,
+        quantity: 1
+      }
+    ]);
+  }
+}
 
   return (
     <Link to={`/product/${product.id}`} className="item-card">
@@ -65,6 +92,9 @@ export default function ProductCard({ product }) {
             ({Math.round(product.discountPercentage)}% off)
           </span>
         </div>
+        <button onClick={addProductToCart}>
+  Add to Cart
+</button>
       </section>
     </Link>
   );
